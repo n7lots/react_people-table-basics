@@ -17,7 +17,9 @@ export const PeoplePage = () => {
 
       try {
         const [response] = await Promise.all([
-          fetch('api/people.json'),
+          fetch(
+            'https://mate-academy.github.io/react_people-table/api/people.json',
+          ),
           wait(500),
         ]);
 
