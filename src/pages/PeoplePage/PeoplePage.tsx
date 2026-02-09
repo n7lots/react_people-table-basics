@@ -23,8 +23,8 @@ export const PeoplePage = () => {
           wait(500),
         ]);
 
-        if (!response) {
-          throw new Error('Network response was not ok');
+        if (!response.ok) {
+          throw new Error(`${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
